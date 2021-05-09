@@ -1,0 +1,17 @@
+<p>exchanging</p>
+<div style="border: 1px solid palevioletred; min-width: 200px; max-width: 50vw;">
+    <div *ngFor="let coffee of CoffeeList; index as i_coffee" style="margin:10px; border-style: dotted; border-width: 1px; border-color: palevioletred;">
+        <label
+            id="{{i_coffee}}"
+            draggable="true"
+            (dragstart)="dragStartCoffee($event, i_coffee, coffee)"
+            (dragend)="dragEndCoffee()"
+            (dragenter)="dragEnterCoffee($event)"
+            (dragleave)="dragLeaveCoffee($event)"
+            (dragover)="dragOverCoffee($event)"
+            (drop)="dropCoffee($event, i_coffee, coffee)"
+            style="cursor: move; display: block; background-color: palevioletred;"
+            >{{coffee}}
+        </label>
+    </div>
+</div>

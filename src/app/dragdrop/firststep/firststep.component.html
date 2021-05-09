@@ -1,0 +1,17 @@
+<p>simple</p>
+<div style="border: 1px solid cornflowerblue; min-width: 200px; max-width: 50vw;">
+    <div *ngFor="let fruit of FruitList; index as i_fruit" style="margin:10px; border-style: dotted; border-width: 1px; border-color: cornflowerblue;">
+        <label
+            id="{{i_fruit}}"
+            draggable="true"
+            (dragstart)="dragStartFruit($event, fruit)"
+            (dragend)="dragEndFruit($event, fruit)"
+            (dragenter)="dragEnterFruit($event, fruit)"
+            (dragleave)="dragLeaveFruit($event, fruit)"
+            (dragover)="dragOverFruit($event, fruit)"
+            (drop)="dropFruit($event, fruit)"
+            style="cursor: move; background-color: cornflowerblue;"
+            >{{fruit}}
+        </label>
+    </div>
+</div>
