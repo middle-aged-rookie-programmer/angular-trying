@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-firststep',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FirststepComponent implements OnInit {
   FruitList: Array<string> = ["Apple", "Banana", "Cherry", "Coconut", "Grapefruit", "Kiwi", "Orange", "Pineapple", "Raspberry", "Strawberry"]
 
-  constructor() { }
+  constructor(private navigateS: NavigationService) { }
 
   ngOnInit(): void {
   }
@@ -51,5 +52,9 @@ export class FirststepComponent implements OnInit {
     console.log("dropFruit");
     console.log(event);
     console.log(fruit);
+  }
+
+  GoExchanging() {
+    this.navigateS.GoExchanging();
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-secondstep',
@@ -12,7 +13,7 @@ export class SecondstepComponent implements OnInit {
   toCoffeeId: number = 0;
   toCoffee: string = "";
 
-  constructor() { }
+  constructor(private navigateS: NavigationService) { }
 
   ngOnInit(): void {
   }
@@ -57,5 +58,9 @@ export class SecondstepComponent implements OnInit {
     this.fromCoffee = "";
     this.toCoffeeId = 0;
     this.toCoffee = "";
+  }
+
+  GoSimple() {
+    this.navigateS.GoSimple();
   }
 }
